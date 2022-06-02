@@ -40,7 +40,7 @@ body {
   width: 25vw;
   height: 60vh;
   border-radius: 0.5rem;
-  background-color: rgba(172, 227, 249, 0.3);
+  background-color: rgba(172, 227, 249, 0.5);
   backdrop-filter: blur(4px);
   position: relative;
   overflow: hidden;
