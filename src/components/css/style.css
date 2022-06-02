@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.yellow{
+  color: rgb(249, 249, 113);
+}
+.grey{
+  color: rgb(196, 196, 196);
+}
+.blue{
+  color: rgb(77, 160, 255);
+}
+body {
+  background-color: rgb(89, 77, 181);
+  font-family: "Jost", sans-serif;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: aliceblue;
+  background: url(./wavebg.jpg) no-repeat center center/cover;
+}
+
+.box {
+  width: 25vw;
+  height: 60vh;
+  border-radius: 0.5rem;
+  background-color: rgba(172, 227, 249, 0.3);
+  backdrop-filter: blur(4px);
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  min-width: 20rem;
+  min-height: 35rem;
+}
+.inputData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputField {
+  margin: 1rem;
+  padding: 1rem 1rem;
+  width: 50%;
+  height: 30px;
+  border-radius: 15px;
+  border-color: white;
+  font-size: 1.5rem;
+}
+.wave {
+  opacity: 0.3;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  background-color: white;
+  width: 50rem;
+  height: 50rem;
+  margin-left: -25rem;
+  margin-top: -20rem;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  animation: drift 3s infinite linear;
+  z-index: 1;
+}
+.wave.-two {
+  opacity: 0.1;
+  animation: drift 1s infinite linear;
+  z-index: 3 !important;
+}
+.wave.-three {
+  opacity: 0.2;
+  animation: drift 5s infinite linear;
+  z-index: -2 !important;
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+.info {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 50vh;
+  z-index: 4;
+}
+
+.fa-street-view {
+  animation: rotates 3s infinite ease;
+}
+@keyframes rotates {
+  0% {
+    transform: translateX(-0.5rem);
+  }
+  50% {
+    transform: translateX(0.5rem);
+  }
+  100% {
+    transform: translateX(-0.5rem);
+  }
+}
+.box::after {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+.tempmin_max {
+  font-weight: lighter;
+}
+/* .weatherIcon {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+  animation: grow 3s ease infinite ;
+} */
+.weatherIcon {
+  height: 55%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  animation: grow 5s linear infinite;
+  
+}
+@keyframes grow {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.0);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
